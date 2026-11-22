@@ -1,0 +1,36 @@
+{
+  "_nota": "Factores que suben la urgencia. Se preguntan una sola vez al inicio del triaje.",
+  "factores": {
+    "menor_6_meses": {
+      "pregunta": "¿La consulta es por un bebé menor de 6 meses?",
+      "claves": ["bebe", "recien nacido", "meses de nacido", "lactante"],
+      "efecto": "Fiebre con síntomas de resfrío → acudir de inmediato (puede complicarse a neumonía).",
+      "fuentes": ["https://www.gob.pe/institucion/minsa/noticias/36070-padres-de-familia-deben-reconocer-signos-de-alarma"]
+    },
+    "menor_5": {
+      "pregunta": "¿La consulta es por un niño o niña menor de 5 años?",
+      "claves": ["mi hijo", "mi hija", "nino", "nina", "mi bebe", "anos de edad"],
+      "efecto": "Mayor riesgo en EDA (deshidratación), neumonía y dengue.",
+      "fuentes": ["https://www.gob.pe/21241-que-es-la-enfermedad-diarreica-aguda-eda", "http://www.gob.pe/41723-que-es-la-neumonia"]
+    },
+    "mayor_60": {
+      "pregunta": "¿Tienes 60 años o más?",
+      "claves": ["adulto mayor", "anciano", "anciana", "tercera edad"],
+      "efecto": "Gripe con riesgo de complicarse a neumonía.",
+      "fuentes": ["https://www.gob.pe/institucion/minsa/noticias/33392-adultos-mayores-con-influenza-deben-evitar-la-neumonia"]
+    },
+    "embarazo": {
+      "pregunta": "¿Estás embarazada?",
+      "claves": ["embarazada", "gestante", "embarazo", "estoy esperando"],
+      "efecto": "Grupo de riesgo de influenza; en dengue debe ser evaluada por un médico.",
+      "fuentes": ["https://www.gob.pe/institucion/minsa/noticias/31763-gestantes-adultos-mayores-y-personas-con-comorbilidad-deben-vacunarse-contra-la-influenza-estacional"],
+      "pendiente": "Confirmar en RM 071-2017-MINSA el manejo de la gestante con dengue."
+    },
+    "enfermedad_cronica": {
+      "pregunta": "¿Tienes alguna enfermedad crónica (diabetes, hipertensión, del corazón, de los riñones o de los pulmones)?",
+      "claves": ["diabetes", "diabetico", "hipertension", "presion alta", "asma", "corazon", "rinones", "epoc"],
+      "efecto": "Grupo de riesgo (comorbilidad) en influenza.",
+      "fuentes": ["https://www.gob.pe/institucion/minsa/noticias/31763-gestantes-adultos-mayores-y-personas-con-comorbilidad-deben-vacunarse-contra-la-influenza-estacional"]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "_nota": "Grupos de edad: una PARTICIÓN de todas las edades (en meses, intervalos [desde, hasta) sin huecos ni traslapes; 'hasta': null = sin límite). 'literales' son los que usan las reglas de riesgo (reglas.json F1–F6); 'no_aplica' son preguntas que no se hacen a ese grupo; 'claves' son frases que bastan para reconocerlo sin preguntar. verificacion.py comprueba la partición (I14).",
+  "grupos": {
+    "bebe_menor_6m": {
+      "etiqueta": "Bebé (menos de 6 meses)",
+      "desde_meses": 0, "hasta_meses": 6,
+      "literales": ["menor_6_meses", "menor_5"],
+      "no_aplica": ["embarazo", "enfermedad_cronica"],
+      "claves": ["bebe", "recien nacido", "lactante", "meses de nacido"]
+    },
+    "nino_menor_5": {
+      "etiqueta": "Niño o niña (menor de 5 años)",
+      "desde_meses": 6, "hasta_meses": 60,
+      "literales": ["menor_5"],
+      "no_aplica": ["embarazo"],
+      "claves": ["mi bebe"]
+    },
+    "persona_5_59": {
+      "etiqueta": "Persona de 5 a 59 años",
+      "desde_meses": 60, "hasta_meses": 720,
+      "literales": [],
+      "no_aplica": [],
+      "claves": []
+    },
+    "persona_60_mas": {
+      "etiqueta": "Persona de 60 años o más",
+      "desde_meses": 720, "hasta_meses": null,
+      "literales": ["mayor_60"],
+      "no_aplica": ["embarazo"],
+      "claves": ["adulto mayor", "anciano", "anciana", "tercera edad"]
+    }
+  }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f3d5e">
+  <title>TriajeLógico · orientación médica</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Ccircle cx=%2720%27 cy=%2720%27 r=%2720%27 fill=%27%230e7490%27/%3E%3Crect x=%2717%27 y=%279%27 width=%276%27 height=%2722%27 rx=%272%27 fill=%27white%27/%3E%3Crect x=%279%27 y=%2717%27 width=%2722%27 height=%276%27 rx=%272%27 fill=%27white%27/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/static/estilos.css">
+</head>
+<body>
+  <!-- Íconos (se reutilizan con <use>) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-bot" viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="#0e7490"/><rect x="17" y="9" width="6" height="22" rx="2" fill="#fff"/><rect x="9" y="17" width="22" height="6" rx="2" fill="#fff"/></symbol>
+    <symbol id="i-enviar" viewBox="0 0 24 24"><path d="M3.4 20.4 21 12 3.4 3.6 3.3 10l12.6 2-12.6 2z" fill="currentColor"/></symbol>
+    <symbol id="i-nueva" viewBox="0 0 24 24"><path d="M12 5V2L7 6.5 12 11V8a5 5 0 1 1-5 5H5a7 7 0 1 0 7-8z" fill="currentColor"/></symbol>
+    <symbol id="i-mapa" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" fill="currentColor"/></symbol>
+    <symbol id="i-razon" viewBox="0 0 24 24"><path d="M4 4h16v2H4zm0 5h10v2H4zm0 5h16v2H4zm0 5h10v2H4z" fill="currentColor"/></symbol>
+    <symbol id="i-telefono" viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.4.55 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.2.2 2.3.55 3.4a1 1 0 0 1-.25 1z" fill="currentColor"/></symbol>
+    <symbol id="i-cerrar" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/></symbol>
+    <symbol id="i-ubicacion" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2" fill="currentColor"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  </svg>
+
+  <a class="saltar" href="#entrada">Saltar al cuadro de texto</a>
+
+  <div class="app">
+    <header class="cabecera">
+      <div class="cabecera-id">
+        <svg class="avatar avatar-grande" aria-hidden="true"><use href="#i-bot"/></svg>
+        <div>
+          <h1>TriajeLógico</h1>
+          <p class="estado"><span class="punto" aria-hidden="true"></span>En línea</p>
+        </div>
+      </div>
+      <button type="button" id="abrir-razonamiento" class="btn-cabecera">
+        <svg aria-hidden="true"><use href="#i-razon"/></svg><span>Ver razonamiento</span>
+      </button>
+      <p class="aviso" role="note">Orientación, no diagnóstico · <a href="tel:106">SAMU 106</a></p>
+    </header>
+
+    <main class="cuerpo">
+      <section class="chat" aria-label="Conversación">
+        <div id="mensajes" class="mensajes" role="log" aria-live="polite" aria-relevant="additions" tabindex="-1"></div>
+
+        <form id="form" class="barra" autocomplete="off">
+          <button type="button" id="nueva" class="btn-icono btn-nueva" title="Nueva consulta" aria-label="Nueva consulta">
+            <svg aria-hidden="true"><use href="#i-nueva"/></svg><span>Nueva consulta</span>
+          </button>
+          <label for="entrada" class="solo-lectores">Escribe tus síntomas</label>
+          <input id="entrada" name="entrada" type="text" maxlength="500" enterkeyhint="send" autofocus
+                 placeholder="Cuéntame tus síntomas…" autocomplete="off">
+          <button type="submit" id="enviar" class="btn-enviar" aria-label="Enviar mensaje">
+            <svg aria-hidden="true"><use href="#i-enviar"/></svg>
+          </button>
+        </form>
+      </section>
+
+      <div id="fondo-panel" class="fondo-panel" hidden></div>
+      <aside id="panel" class="panel" aria-label="Mapa y razonamiento">
+        <div class="panel-cab">
+          <div class="pestanas" role="tablist" aria-label="Contenido del panel">
+            <button type="button" role="tab" id="tab-mapa" aria-controls="vista-mapa" aria-selected="true">
+              <svg aria-hidden="true"><use href="#i-mapa"/></svg>Mapa
+            </button>
+            <button type="button" role="tab" id="tab-razon" aria-controls="vista-razon" aria-selected="false" tabindex="-1">
+              <svg aria-hidden="true"><use href="#i-razon"/></svg>Cómo razonó el sistema
+            </button>
+          </div>
+          <button type="button" id="cerrar-panel" class="btn-icono btn-cerrar" aria-label="Cerrar panel">
+            <svg aria-hidden="true"><use href="#i-cerrar"/></svg>
+          </button>
+        </div>
+        <div id="vista-mapa" class="vista" role="tabpanel" aria-labelledby="tab-mapa">
+          <div id="mapa" class="mapa" role="region" aria-label="Mapa de la ruta"></div>
+          <p class="leyenda">Ruta por calles (OpenStreetMap). Tiempos estimados sin tráfico. © colaboradores de OpenStreetMap.</p>
+        </div>
+        <div id="vista-razon" class="vista" role="tabpanel" aria-labelledby="tab-razon" hidden>
+          <div id="traza" class="traza"><p class="vacio">Aún no hay razonamiento. Cuéntame tus síntomas para empezar.</p></div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

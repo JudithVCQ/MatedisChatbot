@@ -1,0 +1,33 @@
+{
+  "_nota": "Grafo ponderado. Los distritos son nodos intermedios; los establecimientos cuelgan de su distrito. Pesos = minutos estimados. COORDENADAS APROXIMADAS: verificarlas en OpenStreetMap. Los 'centro_salud' son EJEMPLOS: reemplazarlos por establecimientos reales del MINSA.",
+  "distritos": {
+    "cercado":     {"nombre": "Cercado de Lima",       "lat": -12.0464, "lng": -77.0428},
+    "brena":       {"nombre": "Breña",                 "lat": -12.0590, "lng": -77.0500},
+    "rimac":       {"nombre": "Rímac",                 "lat": -12.0300, "lng": -77.0300},
+    "smp":         {"nombre": "San Martín de Porres",  "lat": -12.0280, "lng": -77.0600},
+    "jesus_maria": {"nombre": "Jesús María",           "lat": -12.0750, "lng": -77.0450},
+    "lince":       {"nombre": "Lince",                 "lat": -12.0830, "lng": -77.0350},
+    "la_victoria": {"nombre": "La Victoria",           "lat": -12.0700, "lng": -77.0170},
+    "san_isidro":  {"nombre": "San Isidro",            "lat": -12.0970, "lng": -77.0360},
+    "surquillo":   {"nombre": "Surquillo",             "lat": -12.1120, "lng": -77.0180},
+    "miraflores":  {"nombre": "Miraflores",            "lat": -12.1210, "lng": -77.0300}
+  },
+  "vias": [
+    ["cercado", "brena", 8], ["cercado", "rimac", 10], ["cercado", "la_victoria", 10],
+    ["brena", "jesus_maria", 9], ["brena", "smp", 15], ["rimac", "smp", 12],
+    ["jesus_maria", "lince", 7], ["jesus_maria", "san_isidro", 11], ["lince", "la_victoria", 9],
+    ["lince", "san_isidro", 8], ["san_isidro", "miraflores", 10], ["san_isidro", "surquillo", 9],
+    ["surquillo", "miraflores", 6], ["la_victoria", "surquillo", 14]
+  ],
+  "establecimientos": {
+    "h_rebagliati":   {"nombre": "Hospital Nacional Edgardo Rebagliati Martins", "tipo": "hospital",     "distrito": "jesus_maria", "minutos": 4, "lat": -12.078148, "lng": -77.039988, "coordenadas_fuente": "OSM", "osm_id": "way/39413837", "institucion": "EsSalud", "revisar": true, "nodo": 2608, "distancia_nodo_m": 150.0},
+    "h_loayza":       {"nombre": "Hospital Nacional Arzobispo Loayza",           "tipo": "hospital",     "distrito": "cercado",     "minutos": 3, "lat": -12.049578, "lng": -77.04427, "coordenadas_fuente": "OSM", "osm_id": "way/172600382", "institucion": "MINSA", "revisar": true, "nodo": 33329, "distancia_nodo_m": 85.8},
+    "h_dos_de_mayo":  {"nombre": "Hospital Nacional Dos de Mayo",                "tipo": "hospital",     "distrito": "la_victoria", "minutos": 5, "lat": -12.0559, "lng": -77.015675, "coordenadas_fuente": "OSM", "osm_id": "way/122554771", "institucion": "MINSA", "revisar": true, "nodo": 15350, "distancia_nodo_m": 89.1},
+    "h_cayetano":     {"nombre": "Hospital Nacional Cayetano Heredia",           "tipo": "hospital",     "distrito": "smp",         "minutos": 4, "lat": -12.021606, "lng": -77.055099, "coordenadas_fuente": "OSM", "osm_id": "way/307664865", "institucion": "MINSA", "revisar": true, "nodo": 32238, "distancia_nodo_m": 118.3},
+    "h_casimiro":     {"nombre": "Hospital de Emergencias José Casimiro Ulloa",  "tipo": "hospital",     "distrito": "miraflores",  "minutos": 4, "lat": -12.128024, "lng": -77.017745, "coordenadas_fuente": "OSM", "osm_id": "way/618688385", "institucion": "MINSA", "revisar": true, "nodo": 2822, "distancia_nodo_m": 60.8},
+    "cs_ejemplo_lince":     {"nombre": "Centro de Salud (EJEMPLO) Lince",     "tipo": "centro_salud", "distrito": "lince",     "minutos": 3, "lat": -12.0850, "lng": -77.0330, "institucion": "MINSA", "revisar": true, "nodo": 1978, "distancia_nodo_m": 62.6},
+    "cs_ejemplo_essalud":  {"nombre": "Policlínico EsSalud (EJEMPLO) Jesús María", "tipo": "centro_salud", "distrito": "jesus_maria", "minutos": 3, "lat": -12.0725, "lng": -77.0480, "institucion": "EsSalud", "revisar": true, "nodo": 17878, "distancia_nodo_m": 48.3},
+    "cs_ejemplo_rimac":     {"nombre": "Centro de Salud (EJEMPLO) Rímac",     "tipo": "centro_salud", "distrito": "rimac",     "minutos": 3, "lat": -12.0290, "lng": -77.0280, "institucion": "MINSA", "revisar": true, "nodo": 18733, "distancia_nodo_m": 36.2},
+    "cs_ejemplo_surquillo": {"nombre": "Centro de Salud (EJEMPLO) Surquillo", "tipo": "centro_salud", "distrito": "surquillo", "minutos": 3, "lat": -12.1100, "lng": -77.0200, "institucion": "MINSA", "revisar": true, "nodo": 1051, "distancia_nodo_m": 47.0}
+  }
+}

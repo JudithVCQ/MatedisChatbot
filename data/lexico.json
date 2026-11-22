@@ -1,0 +1,13 @@
+{
+  "_nota": "Lenguaje del chat (sin tildes y en minúsculas). Negadores, cortes y dudas alimentan el autómata de negación; 'comunes' son palabras que nunca se corrigen por ortografía ni son destino de una corrección (incluye las que están a un carácter de una clave: hecho/pecho, gusta/gusto, locos/mocos); las demás listas son frases con las que el usuario pide algo.",
+  "negadores": ["no", "sin", "nunca", "ni", "tampoco", "nada"],
+  "cortes": ["pero", "con", "aunque", "sino", "y", "ademas", "tambien"],
+  "dudas": ["creo", "parece", "quizas", "tal vez", "un poco", "a veces", "como que", "siento que"],
+  "incompletos": ["dolor", "duele", "molestia", "malestar", "me siento mal"],
+  "incompletos_que": ["malestar", "me siento mal"],
+  "otro": ["otro sintoma", "otro lugar", "otra cosa"],
+  "corregir": ["corregir", "incorrecto", "no es correcto", "cambiar", "me equivoque en algo"],
+  "deshacer": ["me equivoque", "deshacer", "volver atras", "paso atras"],
+  "por_que": ["por que", "para que"],
+  "comunes": ["tengo", "tiene", "tienes", "tuve", "estoy", "estas", "siento", "sientes", "hace", "desde", "mucho", "mucha", "muchos", "poco", "pocos", "ahora", "hoy", "ayer", "anoche", "tambien", "ademas", "como", "para", "porque", "cuando", "donde", "quiero", "puedo", "favor", "buenas", "buenos", "gracias", "hola", "doctor", "doctora", "mejor", "peor", "igual", "hecho", "techo", "derecho", "gusta", "gustan", "gustaba", "locos", "locas", "modos", "color", "colores", "hacer", "hacia"]
+}

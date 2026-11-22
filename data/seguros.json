@@ -1,0 +1,47 @@
+{
+  "_nota": "Seguros de salud y las instituciones cuyos establecimientos acepta cada uno. 'claves' son las palabras que reconoce el chat en respuestas libres (sin tildes y en minúsculas); la etiqueta de cada botón también se reconoce. 'busqueda_centro' son las frases con las que el usuario pide un establecimiento. Instituciones por seguro: pendiente de validar con el equipo.",
+  "instituciones": ["MINSA", "GORE", "Municipal", "EsSalud", "Privado", "FFAA", "PNP"],
+  "respaldo_instituciones": ["MINSA", "GORE"],
+  "seguros": {
+    "sis": {
+      "etiqueta": "SIS",
+      "instituciones": ["MINSA", "GORE", "Municipal"],
+      "nota": null,
+      "claves": ["sis", "seguro integral", "seguro integral de salud"]
+    },
+    "essalud": {
+      "etiqueta": "EsSalud",
+      "instituciones": ["EsSalud"],
+      "nota": null,
+      "claves": ["essalud", "es salud", "seguro social"]
+    },
+    "eps_privado": {
+      "etiqueta": "EPS o seguro privado",
+      "instituciones": ["Privado"],
+      "nota": "Confirma con tu aseguradora qué clínicas cubre tu plan.",
+      "claves": ["eps", "seguro privado", "privado", "particular", "aseguradora", "pacifico", "rimac", "mapfre", "sanitas", "la positiva", "positiva", "clinica"]
+    },
+    "ffaa_pnp": {
+      "etiqueta": "Sanidad FFAA/PNP",
+      "instituciones": ["FFAA", "PNP"],
+      "nota": null,
+      "claves": ["sanidad", "ffaa", "pnp", "policia", "policial", "militar", "ejercito", "marina", "fap", "fuerzas armadas"]
+    },
+    "sin_seguro": {
+      "etiqueta": "No tengo seguro",
+      "instituciones": ["MINSA", "GORE"],
+      "nota": "Puedes consultar en el establecimiento si calificas para afiliarte al SIS.",
+      "claves": ["no tengo seguro", "sin seguro", "no tengo", "ninguno", "ninguna", "no"]
+    },
+    "no_se": {
+      "etiqueta": "No sé",
+      "instituciones": ["MINSA", "GORE"],
+      "nota": null,
+      "claves": ["no se", "ni idea", "no estoy seguro", "no estoy segura", "no recuerdo"]
+    }
+  },
+  "busqueda_centro": [
+    "donde me atiendo", "donde me pueden atender", "donde puedo atenderme", "donde atenderme", "donde hay un hospital",
+    "donde queda el hospital", "hospital", "clinica", "posta", "centro de salud", "emergencia cerca", "establecimiento de salud"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "_nota": "Árbol binario de preguntas. Orden: 1) 'alarma', 2) 'factores' de riesgo (una sola vez; 'grupo_edad' es UNA pregunta con 4 opciones excluyentes, y embarazo / enfermedad crónica se saltan según el grupo) 3) 'raiz', el subárbol diagnóstico y, intercalados, 'seguimientos': si el síntoma 'si' está presente, y ya pasaron la alarma y los factores, se pregunta 'pregunta' (duración de la fiebre, intensidad del dolor de barriga) una sola vez. Cada nodo pregunta por un síntoma o factor; 'si'/'no' son los subárboles y {\"hoja\": true} termina el interrogatorio. Las listas 'alarma' y 'factores' son cadenas donde ambas ramas continúan igual (no hace falta repetir el subárbol); en alarma, responder 'sí' termina. app/motor/arbol.py arma el árbol completo al cargarlo.",
+  "alarma": ["dificultad_respirar", "dolor_pecho"],
+  "factores": ["grupo_edad", "embarazo", "enfermedad_cronica"],
+  "seguimientos": [
+    {"si": "fiebre", "pregunta": "duracion_fiebre"},
+    {"si": "dolor_abdominal", "pregunta": "intensidad_dolor_abdominal"}
+  ],
+  "raiz": {
+    "sintoma": "fiebre",
+    "si": {
+      "sintoma": "tos",
+      "si": {
+        "sintoma": "perdida_olfato",
+        "si": {"hoja": true},
+        "no": {"sintoma": "dolor_muscular", "si": {"hoja": true}, "no": {"hoja": true}}
+      },
+      "no": {
+        "sintoma": "dolor_ojos",
+        "si": {"sintoma": "dolor_muscular", "si": {"hoja": true}, "no": {"hoja": true}},
+        "no": {"sintoma": "dolor_garganta", "si": {"hoja": true}, "no": {"hoja": true}}
+      }
+    },
+    "no": {
+      "sintoma": "diarrea",
+      "si": {
+        "sintoma": "vomitos",
+        "si": {"sintoma": "deshidratacion", "si": {"hoja": true}, "no": {"hoja": true}},
+        "no": {"sintoma": "dolor_abdominal", "si": {"hoja": true}, "no": {"hoja": true}}
+      },
+      "no": {
+        "sintoma": "congestion_nasal",
+        "si": {"sintoma": "estornudos", "si": {"hoja": true}, "no": {"hoja": true}},
+        "no": {"hoja": true}
+      }
+    }
+  }
+}

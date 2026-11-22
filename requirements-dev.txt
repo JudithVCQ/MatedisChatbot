@@ -1,0 +1,4 @@
+# Solo para la PC de desarrollo: NO va en requirements.txt ni se instala en Render.
+# Lo usa scripts/descargar_red.py (se corre una sola vez) para bajar la red vial de OpenStreetMap.
+-r requirements.txt
+osmnx>=2.0,<3

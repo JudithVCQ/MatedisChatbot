@@ -1,0 +1,190 @@
+{
+  "_nota": "Fichas de cada cuadro. Contenido parafraseado de fuentes oficiales del Estado peruano (ver 'fuentes'). Sin dosis de medicamentos a propósito. 'revisado_por_equipo' debe pasar a true cuando el equipo lo valide.",
+  "cuadros": {
+    "dengue": {
+      "nombre": "Dengue",
+      "cie10": "A97.0",
+      "cie10_con_alarma": "A97.1",
+      "explicacion": "Infección por el virus del dengue, transmitida por la picadura del zancudo Aedes aegypti. No tiene un tratamiento antiviral específico.",
+      "urgencia_base": "urgencia_media",
+      "cuidados": [
+        "No te automediques.",
+        "No tomes aspirina, ibuprofeno, naproxeno, diclofenaco, metamizol, corticoides (prednisona, dexametasona) ni ivermectina: aumentan el riesgo de sangrado.",
+        "Toma abundante líquido, más de lo normal.",
+        "Haz reposo, de preferencia bajo mosquitero.",
+        "En niños, no des medicamentos sin receta; para la fiebre usa baños con agua tibia y dales todo el líquido que toleren.",
+        "Elimina en casa los recipientes con agua acumulada donde se cría el zancudo."
+      ],
+      "volver_si": [
+        "Dolor abdominal intenso y que no se va.",
+        "Vómitos persistentes (3 o más en 6 horas).",
+        "Sangrado de encías, nariz u otras mucosas.",
+        "Mucho sueño, inquietud, irritabilidad o convulsión.",
+        "Piel amarillenta.",
+        "Orinas mucho menos de lo normal."
+      ],
+      "nota_alarma": "Los signos de alarma suelen aparecer cuando la fiebre empieza a bajar.",
+      "fuentes": [
+        "https://www.gob.pe/41804-que-es-el-dengue-sintomas-y-signos",
+        "https://www.gob.pe/41805-que-es-el-dengue-prevencion-de-complicaciones",
+        "https://www.gob.pe/institucion/dirislimanorte/noticias/1020759-dengue-y-automedicacion-todo-lo-que-deberias-saber-para-proteger-tu-salud",
+        "https://www.gob.pe/institucion/minsa/noticias/42945-ninos-con-sintomas-del-dengue-deben-ser-trasladados-de-inmediato-al-centro-de-salud",
+        "https://www.dge.gob.pe/portal/docs/tools/dengue/7.Informacion_dengue.pdf",
+        "RM 071-2017-MINSA (Guía de Práctica Clínica para la Atención de Casos de Dengue en el Perú)"
+      ],
+      "revisado_por_equipo": false
+    },
+
+    "gastroenteritis": {
+      "nombre": "Enfermedad diarreica aguda (gastroenteritis)",
+      "cie10": "A09.X",
+      "cie10_con_deshidratacion": "A09.X2",
+      "explicacion": "Infección intestinal por virus, bacterias, hongos o parásitos. Son tres o más deposiciones sueltas o líquidas al día, a veces con vómitos o fiebre. Afecta sobre todo a menores de 5 años.",
+      "urgencia_base": "urgencia_baja",
+      "cuidados": [
+        "Toma agua segura o suero de rehidratación oral desde que empieza la diarrea, para evitar la deshidratación.",
+        "No te automediques: el tratamiento principal es reponer líquidos, no los medicamentos.",
+        "En lactantes, no suspendas la lactancia materna ni los líquidos durante la diarrea.",
+        "Lávate las manos con agua y jabón antes de comer, antes de preparar alimentos, después de cambiar pañales y después de ir al baño."
+      ],
+      "volver_si": [
+        "Signos de deshidratación: mucha sed, boca y lengua secas, ojos hundidos, llanto sin lágrimas, orina escasa, decaimiento, irritabilidad o mucho sueño.",
+        "Sangre en las heces.",
+        "Fiebre alta con dolor abdominal intenso.",
+        "Diarrea que dura más de dos días.",
+        "Vómitos muy seguidos, sobre todo en niños (3 o más en una hora)."
+      ],
+      "fuentes": [
+        "https://www.gob.pe/21241-que-es-la-enfermedad-diarreica-aguda-eda",
+        "https://www.gob.pe/36692-que-es-la-enfermedad-diarreica-aguda-eda-prevencion",
+        "https://bvcenadim.digemid.minsa.gob.pe/index.php/noticias/563-el-ministerio-de-salud-advierte-sobre-los-riesgos-de-la-automedicacion-en-el-tratamiento-de-las-enfermedades-diarreicas",
+        "https://cdn.www.gob.pe/uploads/document/file/401993/plan-comunicacional-lavado2.pdf",
+        "https://cdn.www.gob.pe/uploads/document/file/7412768/6317673-guia-de-practica-clinica-para-el-diagnostico-y-tratamiento-de-la-enfermedad-diarreica-aguda-en-el-paciente-pediatrico.pdf",
+        "RM 755-2017/MINSA (Guía de Práctica Clínica de EDA en la niña y el niño)"
+      ],
+      "revisado_por_equipo": false
+    },
+
+    "gripe": {
+      "nombre": "Influenza (gripe estacional)",
+      "cie10": "J11.1",
+      "explicacion": "Enfermedad respiratoria muy contagiosa causada por un virus. Afecta nariz, garganta, bronquios y pulmones, y aumenta en temporada de frío. Empieza de golpe y es más intensa que un resfrío.",
+      "urgencia_base": "urgencia_baja",
+      "cuidados": [
+        "No te automediques.",
+        "Si tienes gripe, no vayas a lugares públicos para no contagiar.",
+        "Cúbrete la boca con el antebrazo o un pañuelo descartable al toser o estornudar.",
+        "Lávate las manos con agua y jabón con frecuencia.",
+        "Ventila y deja entrar luz natural en los ambientes."
+      ],
+      "volver_si": [
+        "Respiración agitada, falta de aire o ahogo.",
+        "Fiebre alta (más de 38 °C) con más tos y más flema.",
+        "Te ronca o silba el pecho.",
+        "Mucho sueño, desorientación o hablar incoherencias.",
+        "No puedes hacer tus actividades normales, como caminar."
+      ],
+      "grupos_de_riesgo": ["embarazo", "mayor_60", "enfermedad_cronica"],
+      "fuentes": [
+        "https://www.gob.pe/22318-que-es-la-influenza",
+        "https://www.gob.pe/institucion/minsa/noticias/33392-adultos-mayores-con-influenza-deben-evitar-la-neumonia",
+        "https://www.gob.pe/institucion/minsa/noticias/31817-minsa-informa-sobre-casos-confirmados-de-influenza-a-h1n1",
+        "https://www.gob.pe/institucion/minsa/noticias/31763-gestantes-adultos-mayores-y-personas-con-comorbilidad-deben-vacunarse-contra-la-influenza-estacional"
+      ],
+      "revisado_por_equipo": false
+    },
+
+    "covid19": {
+      "nombre": "COVID-19",
+      "cie10": "U07.1",
+      "explicacion": "Enfermedad respiratoria causada por el virus SARS-CoV-2. Hoy se presenta de forma parecida a otros virus respiratorios. La pérdida de olfato o gusto es menos común con las variantes actuales.",
+      "urgencia_base": "urgencia_media",
+      "cuidados": [
+        "Haz reposo.",
+        "Aíslate en una habitación iluminada y bien ventilada, de preferencia con baño propio.",
+        "Usa mascarilla KN95 o quirúrgica si sales de tu cuarto o compartes espacios.",
+        "Lávate las manos constantemente y ventila la casa."
+      ],
+      "volver_si": [
+        "Falta de aire, respiración rápida o dificultad para hablar.",
+        "Dolor de pecho o espalda intenso y que no se va.",
+        "Confusión.",
+        "Labios azulados.",
+        "Fiebre que no baja o que dura más de tres días."
+      ],
+      "fuentes": [
+        "https://www.gob.pe/20437-covid-19-sintomas-y-descanso-medico",
+        "https://www.gob.pe/8733-covid-19-recomendaciones-para-pacientes-y-cuidadores",
+        "https://www.gob.pe/10969-que-hacer-si-me-contagie-de-covid-19",
+        "https://www.gob.pe/8665-sintomas-del-coronavirus-conocer-si-he-contraido-la-covid-19",
+        "Directiva 349-2024 (citada en gob.pe/8733)"
+      ],
+      "revisado_por_equipo": false
+    },
+
+    "neumonia": {
+      "nombre": "Neumonía",
+      "cie10": "J18.9",
+      "explicacion": "Infección grave del pulmón causada por virus, bacterias u hongos. Puede ser mortal en menores de 5 años y en adultos mayores si no se atiende a tiempo.",
+      "urgencia_base": "urgencia_alta",
+      "cuidados": [
+        "Requiere evaluación médica inmediata: no esperes en casa."
+      ],
+      "volver_si": [],
+      "nota": "Siempre deriva a emergencias. La neumonía no es un cuadro para manejar en casa.",
+      "fuentes": [
+        "http://www.gob.pe/41723-que-es-la-neumonia",
+        "https://www.dge.gob.pe/portal/docs/tools/compendio_dc.pdf",
+        "https://www.gob.pe/institucion/minsa/noticias/36224-cambios-bruscos-de-temperatura-podrian-provocar-resfrios-y-hasta-la-neumonia"
+      ],
+      "revisado_por_equipo": false
+    },
+
+    "resfrio": {
+      "nombre": "Resfrío común",
+      "cie10": "J00.X",
+      "explicacion": "Infección viral leve de nariz y garganta. Suele dar fiebre baja por pocos días, congestión nasal abundante, dolor de garganta y tos ligera.",
+      "urgencia_base": "urgencia_baja",
+      "cuidados": [
+        "Cúbrete la boca al toser o estornudar.",
+        "Lávate las manos con agua y jabón con frecuencia.",
+        "Ventila los ambientes."
+      ],
+      "volver_si": [
+        "Fiebre que dura más de cuatro días.",
+        "Tos que dura más de dos semanas o se vuelve intensa.",
+        "Dificultad para respirar.",
+        "En bebés menores de 6 meses: cualquier fiebre con síntomas de resfrío (acudir de inmediato)."
+      ],
+      "fuentes": [
+        "https://www.tvperu.gob.pe/novedades/mas-conectados/gripe-o-resfriado-aprende-a-identificar-los-sintomas-y-evita-complicaciones-en-casa",
+        "https://www.gob.pe/institucion/minsa/noticias/36070-padres-de-familia-deben-reconocer-signos-de-alarma",
+        "https://www.gob.pe/institucion/minsa/noticias/31817-minsa-informa-sobre-casos-confirmados-de-influenza-a-h1n1"
+      ],
+      "pendiente": "No se encontró una página de orientación de gob.pe sobre cuidados en casa para el resfrío; los cuidados vienen de las medidas generales para infecciones respiratorias.",
+      "revisado_por_equipo": false
+    },
+
+    "faringitis": {
+      "nombre": "Faringitis o faringoamigdalitis aguda",
+      "cie10": "J02.9",
+      "explicacion": "Inflamación aguda de la faringe, las amígdalas o ambas, generalmente con fiebre. Por los síntomas no se puede distinguir bien si es viral o bacteriana: lo decide un médico.",
+      "urgencia_base": "urgencia_media",
+      "cuidados": [
+        "No te automediques con antibióticos: solo un médico puede indicar si hacen falta."
+      ],
+      "volver_si": [
+        "Vómitos persistentes.",
+        "Orinas mucho menos de lo normal.",
+        "Aparecen manchas o erupción en la piel.",
+        "Dificultad para respirar o silbido en el pecho."
+      ],
+      "fuentes": [
+        "https://cdn.www.gob.pe/uploads/document/file/7412689/6317614-guia-de-practica-clinica-para-el-diagnostico-y-tratamiento-de-la-faringitis-aguda-en-el-paciente-pediatrico.pdf",
+        "https://www.dge.gob.pe/portal/docs/tools/teleconferencia/2021/SE082021/04.pdf"
+      ],
+      "pendiente": "La única fuente es una guía pediátrica para médicos. Hay que buscar una página de orientación al público y completar los cuidados.",
+      "revisado_por_equipo": false
+    }
+  }
+}

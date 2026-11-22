@@ -1,0 +1,18 @@
+{
+  "_nota": "Nombres legibles (en minúscula, para usarlos dentro de una frase) de síntomas y factores. Los ids no se muestran al usuario.",
+  "nombres": {
+    "fiebre": "fiebre", "tos": "tos", "dolor_garganta": "dolor de garganta", "congestion_nasal": "congestión nasal",
+    "estornudos": "estornudos", "dolor_cabeza": "dolor de cabeza", "dolor_muscular": "dolor de cuerpo o músculos",
+    "dolor_ojos": "dolor detrás de los ojos", "sarpullido": "manchas o ronchas en la piel", "cansancio": "cansancio",
+    "perdida_olfato": "pérdida del olfato o del gusto", "diarrea": "diarrea", "vomitos": "vómitos",
+    "dolor_abdominal": "dolor de barriga", "deshidratacion": "señales de deshidratación", "dolor_pecho": "dolor en el pecho",
+    "dificultad_respirar": "dificultad para respirar", "sangrado": "sangrado", "confusion": "confusión o desmayo",
+    "vomitos_persistentes": "vómitos seguidos", "dolor_abdominal_intenso": "dolor de barriga muy fuerte",
+    "somnolencia": "mucho sueño o decaimiento", "labios_azulados": "labios o piel azulados",
+    "respiracion_rapida": "respiración rápida", "silbido_pecho": "silbido en el pecho", "sangre_heces": "sangre en las heces",
+    "orina_poco": "orina escasa", "piel_amarilla": "piel amarillenta", "dolor_articulaciones": "dolor en las articulaciones",
+    "escalofrios": "escalofríos", "flema": "flema", "fiebre_persistente": "fiebre de más de 3 días",
+    "embarazo": "embarazo", "enfermedad_cronica": "enfermedad crónica",
+    "menor_6_meses": "bebé menor de 6 meses", "menor_5": "menor de 5 años", "mayor_60": "60 años o más"
+  }
+}

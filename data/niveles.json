@@ -1,0 +1,25 @@
+{
+  "_nota": "Del nivel de urgencia a la acción y al tipo de establecimiento. Categorías según la Norma Técnica de Salud N.° 021-MINSA/DGSP-V.03 (Categorías de Establecimientos del Sector Salud). REVISAR la lista de categorías contra la norma.",
+  "niveles": {
+    "urgencia_alta": {
+      "accion": "Acude a EMERGENCIAS ahora o llama al SAMU 106.",
+      "cuando": "ahora",
+      "categorias": ["II-1", "II-2", "II-E", "III-1", "III-2", "III-E"],
+      "requiere_emergencia_24h": true
+    },
+    "urgencia_media": {
+      "accion": "Acude hoy a un centro de salud para que te evalúe un médico.",
+      "cuando": "hoy",
+      "categorias": ["I-2", "I-3", "I-4", "II-1", "II-2"],
+      "requiere_emergencia_24h": false
+    },
+    "urgencia_baja": {
+      "accion": "Puedes cuidarte en casa siguiendo las recomendaciones y vigilando los signos de alarma.",
+      "cuando": "vigilar",
+      "categorias": ["I-1", "I-2", "I-3", "I-4"],
+      "requiere_emergencia_24h": false,
+      "ruta_opcional": true
+    }
+  },
+  "revisado_por_equipo": false
+}

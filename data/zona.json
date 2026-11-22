@@ -1,0 +1,22 @@
+{
+  "_nota": "Zona de cobertura del sistema. Todo lo que dependa de la zona (descarga de la red vial, fuera de zona, pruebas) lee este archivo: no hay números fijos en el código. 'max_distancia_establecimiento_nodo_m': un establecimiento a más de esto de su calle más cercana es un error de datos (revisar sus coordenadas). 'puntos_de_control' son los lugares que la zona debe cubrir como mínimo; el script de descarga y las pruebas comprueban que cada uno esté dentro del radio y a menos de 'umbral_fuera_de_zona_m' de una calle.",
+  "centro": {"lat": -12.070, "lng": -77.050},
+  "radio_m": 9000,
+  "umbral_fuera_de_zona_m": 1500,
+  "max_distancia_establecimiento_nodo_m": 150,
+  "puntos_de_control": [
+    {"nombre": "Ciudad Universitaria de la UNMSM", "lat": -12.056,  "lng": -77.084},
+    {"nombre": "Cercado de Lima",                  "lat": -12.0464, "lng": -77.0428},
+    {"nombre": "Breña",                            "lat": -12.059,  "lng": -77.050},
+    {"nombre": "Rímac",                            "lat": -12.030,  "lng": -77.030},
+    {"nombre": "San Martín de Porres",             "lat": -12.028,  "lng": -77.060},
+    {"nombre": "Jesús María",                      "lat": -12.075,  "lng": -77.045},
+    {"nombre": "Pueblo Libre",                     "lat": -12.0745, "lng": -77.063},
+    {"nombre": "San Miguel",                       "lat": -12.0775, "lng": -77.0925},
+    {"nombre": "Lince",                            "lat": -12.083,  "lng": -77.035},
+    {"nombre": "La Victoria",                      "lat": -12.070,  "lng": -77.017},
+    {"nombre": "San Isidro",                       "lat": -12.097,  "lng": -77.036},
+    {"nombre": "Surquillo",                        "lat": -12.112,  "lng": -77.018},
+    {"nombre": "Miraflores",                       "lat": -12.121,  "lng": -77.030}
+  ]
+}

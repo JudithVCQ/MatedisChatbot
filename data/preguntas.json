@@ -1,0 +1,24 @@
+{
+  "_nota": "Preguntas del árbol que NO son sí/no. 'tipo': 'grupo' = la respuesta es un grupo de edad (grupos_edad.json); 'opciones' = botones. Cada opción: 'etiqueta' (el botón), 'claves' (frases que también la eligen), 'dias' ([mín, máx], opcional: para elegirla por un número de días) y 'efecto' (literales que se agregan como presentes o ausentes).",
+  "preguntas": {
+    "grupo_edad": {"tipo": "grupo", "pregunta": "¿Para quién es la consulta?"},
+    "duracion_fiebre": {
+      "tipo": "opciones",
+      "pregunta": "¿Desde cuándo tienes fiebre?",
+      "opciones": [
+        {"id": "hoy", "etiqueta": "Hoy", "claves": ["hoy"], "dias": [0, 0], "efecto": {"ausentes": ["fiebre_persistente"]}},
+        {"id": "1_3_dias", "etiqueta": "1 a 3 días", "claves": ["1 a 3 dias", "ayer", "anteayer"], "dias": [1, 3], "efecto": {"ausentes": ["fiebre_persistente"]}},
+        {"id": "mas_3_dias", "etiqueta": "Más de 3 días", "claves": ["mas de 3 dias", "varios dias", "una semana"], "dias": [4, null], "efecto": {"presentes": ["fiebre_persistente"]}}
+      ]
+    },
+    "intensidad_dolor_abdominal": {
+      "tipo": "opciones",
+      "pregunta": "¿Qué tan fuerte es el dolor de barriga?",
+      "opciones": [
+        {"id": "leve", "etiqueta": "Leve", "claves": ["leve", "suave", "poco"], "efecto": {}},
+        {"id": "moderado", "etiqueta": "Moderado", "claves": ["moderado", "regular", "mas o menos"], "efecto": {}},
+        {"id": "fuerte", "etiqueta": "Fuerte y no se me pasa", "claves": ["fuerte y no se me pasa", "muy fuerte", "insoportable", "no se me pasa", "fuerte"], "efecto": {"presentes": ["dolor_abdominal_intenso"]}}
+      ]
+    }
+  }
+}
